@@ -665,6 +665,27 @@ unsigned long psu_pll_init_data(void)
 /*##################################################################### */
 
     /*
+    * DPLL FRAC CFG
+    */
+    /*
+    * Register : DPLL_FRAC_CFG @ 0XFD1A0034
+
+    * Fractional SDM bypass control. When 0, PLL is in integer mode and it ign
+    * ores all fractional data. When 1, PLL is in fractional mode and uses DAT
+    * A of this register for the fractional portion of the feedback divider.
+    *  PSU_CRF_APB_DPLL_FRAC_CFG_ENABLED                           0x0
+
+    * Fractional value for the Feedback value.
+    *  PSU_CRF_APB_DPLL_FRAC_CFG_DATA                              0x0
+
+    * Fractional control for the PLL
+    * (OFFSET, MASK, VALUE)      (0XFD1A0034, 0x8000FFFFU ,0x00000000U)
+    */
+	PSU_Mask_Write(CRF_APB_DPLL_FRAC_CFG_OFFSET,
+		0x8000FFFFU, 0x00000000U);
+/*##################################################################### */
+
+    /*
     * ASSERT RESET
     */
     /*
@@ -740,27 +761,6 @@ unsigned long psu_pll_init_data(void)
     */
 	PSU_Mask_Write(CRF_APB_DPLL_TO_LPD_CTRL_OFFSET,
 		0x00003F00U, 0x00000300U);
-/*##################################################################### */
-
-    /*
-    * DPLL FRAC CFG
-    */
-    /*
-    * Register : DPLL_FRAC_CFG @ 0XFD1A0034
-
-    * Fractional SDM bypass control. When 0, PLL is in integer mode and it ign
-    * ores all fractional data. When 1, PLL is in fractional mode and uses DAT
-    * A of this register for the fractional portion of the feedback divider.
-    *  PSU_CRF_APB_DPLL_FRAC_CFG_ENABLED                           0x0
-
-    * Fractional value for the Feedback value.
-    *  PSU_CRF_APB_DPLL_FRAC_CFG_DATA                              0x0
-
-    * Fractional control for the PLL
-    * (OFFSET, MASK, VALUE)      (0XFD1A0034, 0x8000FFFFU ,0x00000000U)
-    */
-	PSU_Mask_Write(CRF_APB_DPLL_FRAC_CFG_OFFSET,
-		0x8000FFFFU, 0x00000000U);
 /*##################################################################### */
 
     /*

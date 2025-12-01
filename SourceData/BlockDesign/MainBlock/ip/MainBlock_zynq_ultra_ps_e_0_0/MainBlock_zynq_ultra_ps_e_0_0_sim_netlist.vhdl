@@ -1,8 +1,8 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
--- Date        : Thu Oct  2 12:00:33 2025
+-- Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+-- Date        : Mon Dec  1 10:14:57 2025
 -- Host        : lpc1 running 64-bit Ubuntu 24.04.3 LTS
 -- Command     : write_vhdl -force -mode funcsim
 --               /mnt/data_disk/vivado_ws/ZuBoardDemo_PL/SourceData/BlockDesign/MainBlock/ip/MainBlock_zynq_ultra_ps_e_0_0/MainBlock_zynq_ultra_ps_e_0_0_sim_netlist.vhdl
@@ -15,7 +15,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e is
+entity MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e is
   port (
     maxihpm0_fpd_aclk : in STD_LOGIC;
     dp_video_ref_clk : out STD_LOGIC;
@@ -1037,6 +1037,8 @@ entity MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e is
     ps_pl_irq_usb3_0_otg : out STD_LOGIC;
     ps_pl_irq_usb3_1_endpoint : out STD_LOGIC_VECTOR ( 3 downto 0 );
     ps_pl_irq_usb3_1_otg : out STD_LOGIC;
+    ps_pl_irq_usb2_0_otg : out STD_LOGIC;
+    ps_pl_irq_usb2_1_otg : out STD_LOGIC;
     ps_pl_irq_adma_chan : out STD_LOGIC_VECTOR ( 7 downto 0 );
     ps_pl_irq_usb3_0_pmu_wakeup : out STD_LOGIC_VECTOR ( 1 downto 0 );
     ps_pl_irq_gdma_chan : out STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -1510,85 +1512,85 @@ entity MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e is
     o_dbg_l3_rxclk : out STD_LOGIC
   );
   attribute C_DP_USE_AUDIO : integer;
-  attribute C_DP_USE_AUDIO of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is 0;
+  attribute C_DP_USE_AUDIO of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is 0;
   attribute C_DP_USE_VIDEO : integer;
-  attribute C_DP_USE_VIDEO of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is 0;
+  attribute C_DP_USE_VIDEO of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is 0;
   attribute C_EMIO_GPIO_WIDTH : integer;
-  attribute C_EMIO_GPIO_WIDTH of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is 30;
+  attribute C_EMIO_GPIO_WIDTH of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is 30;
   attribute C_EN_EMIO_TRACE : integer;
-  attribute C_EN_EMIO_TRACE of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is 0;
+  attribute C_EN_EMIO_TRACE of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is 0;
   attribute C_EN_FIFO_ENET0 : string;
-  attribute C_EN_FIFO_ENET0 of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is "0";
+  attribute C_EN_FIFO_ENET0 of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is "0";
   attribute C_EN_FIFO_ENET1 : string;
-  attribute C_EN_FIFO_ENET1 of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is "0";
+  attribute C_EN_FIFO_ENET1 of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is "0";
   attribute C_EN_FIFO_ENET2 : string;
-  attribute C_EN_FIFO_ENET2 of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is "0";
+  attribute C_EN_FIFO_ENET2 of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is "0";
   attribute C_EN_FIFO_ENET3 : string;
-  attribute C_EN_FIFO_ENET3 of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is "0";
+  attribute C_EN_FIFO_ENET3 of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is "0";
   attribute C_MAXIGP0_DATA_WIDTH : integer;
-  attribute C_MAXIGP0_DATA_WIDTH of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is 128;
+  attribute C_MAXIGP0_DATA_WIDTH of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is 128;
   attribute C_MAXIGP1_DATA_WIDTH : integer;
-  attribute C_MAXIGP1_DATA_WIDTH of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is 128;
+  attribute C_MAXIGP1_DATA_WIDTH of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is 128;
   attribute C_MAXIGP2_DATA_WIDTH : integer;
-  attribute C_MAXIGP2_DATA_WIDTH of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is 32;
+  attribute C_MAXIGP2_DATA_WIDTH of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is 32;
   attribute C_NUM_F2P_0_INTR_INPUTS : integer;
-  attribute C_NUM_F2P_0_INTR_INPUTS of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is 1;
+  attribute C_NUM_F2P_0_INTR_INPUTS of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is 1;
   attribute C_NUM_F2P_1_INTR_INPUTS : integer;
-  attribute C_NUM_F2P_1_INTR_INPUTS of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is 1;
+  attribute C_NUM_F2P_1_INTR_INPUTS of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is 1;
   attribute C_NUM_FABRIC_RESETS : integer;
-  attribute C_NUM_FABRIC_RESETS of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is 1;
+  attribute C_NUM_FABRIC_RESETS of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is 1;
   attribute C_PL_CLK0_BUF : string;
-  attribute C_PL_CLK0_BUF of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is "TRUE";
+  attribute C_PL_CLK0_BUF of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is "TRUE";
   attribute C_PL_CLK1_BUF : string;
-  attribute C_PL_CLK1_BUF of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is "FALSE";
+  attribute C_PL_CLK1_BUF of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is "FALSE";
   attribute C_PL_CLK2_BUF : string;
-  attribute C_PL_CLK2_BUF of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is "FALSE";
+  attribute C_PL_CLK2_BUF of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is "FALSE";
   attribute C_PL_CLK3_BUF : string;
-  attribute C_PL_CLK3_BUF of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is "FALSE";
+  attribute C_PL_CLK3_BUF of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is "FALSE";
   attribute C_SAXIGP0_DATA_WIDTH : integer;
-  attribute C_SAXIGP0_DATA_WIDTH of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is 128;
+  attribute C_SAXIGP0_DATA_WIDTH of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is 128;
   attribute C_SAXIGP1_DATA_WIDTH : integer;
-  attribute C_SAXIGP1_DATA_WIDTH of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is 128;
+  attribute C_SAXIGP1_DATA_WIDTH of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is 128;
   attribute C_SAXIGP2_DATA_WIDTH : integer;
-  attribute C_SAXIGP2_DATA_WIDTH of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is 128;
+  attribute C_SAXIGP2_DATA_WIDTH of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is 128;
   attribute C_SAXIGP3_DATA_WIDTH : integer;
-  attribute C_SAXIGP3_DATA_WIDTH of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is 128;
+  attribute C_SAXIGP3_DATA_WIDTH of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is 128;
   attribute C_SAXIGP4_DATA_WIDTH : integer;
-  attribute C_SAXIGP4_DATA_WIDTH of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is 128;
+  attribute C_SAXIGP4_DATA_WIDTH of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is 128;
   attribute C_SAXIGP5_DATA_WIDTH : integer;
-  attribute C_SAXIGP5_DATA_WIDTH of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is 128;
+  attribute C_SAXIGP5_DATA_WIDTH of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is 128;
   attribute C_SAXIGP6_DATA_WIDTH : integer;
-  attribute C_SAXIGP6_DATA_WIDTH of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is 128;
+  attribute C_SAXIGP6_DATA_WIDTH of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is 128;
   attribute C_SD0_INTERNAL_BUS_WIDTH : integer;
-  attribute C_SD0_INTERNAL_BUS_WIDTH of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is 5;
+  attribute C_SD0_INTERNAL_BUS_WIDTH of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is 5;
   attribute C_SD1_INTERNAL_BUS_WIDTH : integer;
-  attribute C_SD1_INTERNAL_BUS_WIDTH of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is 4;
+  attribute C_SD1_INTERNAL_BUS_WIDTH of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is 4;
   attribute C_TRACE_DATA_WIDTH : integer;
-  attribute C_TRACE_DATA_WIDTH of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is 32;
+  attribute C_TRACE_DATA_WIDTH of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is 32;
   attribute C_TRACE_PIPELINE_WIDTH : integer;
-  attribute C_TRACE_PIPELINE_WIDTH of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is 8;
+  attribute C_TRACE_PIPELINE_WIDTH of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is 8;
   attribute C_USE_DEBUG_TEST : integer;
-  attribute C_USE_DEBUG_TEST of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is 0;
+  attribute C_USE_DEBUG_TEST of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is 0;
   attribute C_USE_DIFF_RW_CLK_GP0 : integer;
-  attribute C_USE_DIFF_RW_CLK_GP0 of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is 0;
+  attribute C_USE_DIFF_RW_CLK_GP0 of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is 0;
   attribute C_USE_DIFF_RW_CLK_GP1 : integer;
-  attribute C_USE_DIFF_RW_CLK_GP1 of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is 0;
+  attribute C_USE_DIFF_RW_CLK_GP1 of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is 0;
   attribute C_USE_DIFF_RW_CLK_GP2 : integer;
-  attribute C_USE_DIFF_RW_CLK_GP2 of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is 0;
+  attribute C_USE_DIFF_RW_CLK_GP2 of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is 0;
   attribute C_USE_DIFF_RW_CLK_GP3 : integer;
-  attribute C_USE_DIFF_RW_CLK_GP3 of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is 0;
+  attribute C_USE_DIFF_RW_CLK_GP3 of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is 0;
   attribute C_USE_DIFF_RW_CLK_GP4 : integer;
-  attribute C_USE_DIFF_RW_CLK_GP4 of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is 0;
+  attribute C_USE_DIFF_RW_CLK_GP4 of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is 0;
   attribute C_USE_DIFF_RW_CLK_GP5 : integer;
-  attribute C_USE_DIFF_RW_CLK_GP5 of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is 0;
+  attribute C_USE_DIFF_RW_CLK_GP5 of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is 0;
   attribute C_USE_DIFF_RW_CLK_GP6 : integer;
-  attribute C_USE_DIFF_RW_CLK_GP6 of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is 0;
+  attribute C_USE_DIFF_RW_CLK_GP6 of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is 0;
   attribute HW_HANDOFF : string;
-  attribute HW_HANDOFF of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is "MainBlock_zynq_ultra_ps_e_0_0.hwdef";
+  attribute HW_HANDOFF of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is "MainBlock_zynq_ultra_ps_e_0_0.hwdef";
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is "zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e";
+  attribute ORIG_REF_NAME of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is "zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e";
   attribute PSS_IO : string;
-  attribute PSS_IO of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is "Signal Name, DiffPair Type, DiffPair Signal,Direction, Site Type, IO Standard, Drive (mA), Slew Rate, Pull Type, IBIS Model, ODT, OUTPUT_IMPEDANCE " & LF &
+  attribute PSS_IO of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is "Signal Name, DiffPair Type, DiffPair Signal,Direction, Site Type, IO Standard, Drive (mA), Slew Rate, Pull Type, IBIS Model, ODT, OUTPUT_IMPEDANCE " & LF &
  "QSPI_X4_SCLK_OUT, , , OUT, PS_MIO0_500, LVCMOS18, 12, FAST, PULLUP, PS_MIO_LVCMOS18_F_12,,  " & LF &
  "QSPI_X4_MISO_MO1, , , INOUT, PS_MIO1_500, LVCMOS18, 12, FAST, PULLUP, PS_MIO_LVCMOS18_F_12,,  " & LF &
  "QSPI_X4_MO2, , , INOUT, PS_MIO2_500, LVCMOS18, 12, FAST, PULLUP, PS_MIO_LVCMOS18_F_12,,  " & LF &
@@ -1750,12 +1752,12 @@ entity MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e is
  " LPDDR4_DQ30, , , INOUT, PS_DDR_DQ30_504, LPDDR4, , , ,PS_LPDDR4_DQ_OUT40|PS_LPDDR4_DQ_IN40, RTT_40, 40" & LF &
  " LPDDR4_DQ31, , , INOUT, PS_DDR_DQ31_504, LPDDR4, , , ,PS_LPDDR4_DQ_OUT40|PS_LPDDR4_DQ_IN40, RTT_40, 40";
   attribute PSS_JITTER : string;
-  attribute PSS_JITTER of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is "<PSS_EXTERNAL_CLOCKS><EXTERNAL_CLOCK name={PLCLK[0]} clock_external_divide={15} vco_name={IOPLL} vco_freq={1500.000} vco_internal_divide={1}/></PSS_EXTERNAL_CLOCKS>";
+  attribute PSS_JITTER of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is "<PSS_EXTERNAL_CLOCKS><EXTERNAL_CLOCK name={PLCLK[0]} clock_external_divide={15} vco_name={IOPLL} vco_freq={1500.000} vco_internal_divide={1}/></PSS_EXTERNAL_CLOCKS>";
   attribute PSS_POWER : string;
-  attribute PSS_POWER of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e : entity is "<BLOCKTYPE name={PS8}> <PS8><FPD><PROCESSSORS><PROCESSOR name={Cortex A-53} numCores={2} L2Cache={Enable} clockFreq={1200.000000} load={0.5}/><PROCESSOR name={GPU Mali-400 MP} numCores={0} clockFreq={0} load={0.5} /></PROCESSSORS><PLLS><PLL domain={APU} vco={2399.976} /><PLL domain={DDR} vco={2133.312} /><PLL domain={Video} vco={2366.643} /></PLLS><MEMORY memType={LPDDR4} dataWidth={4} clockFreq={533.333} readRate={0.5} writeRate={0.5} cmdAddressActivity={0.5} /><SERDES><GT name={PCIe} standard={} lanes={} usageRate={0.5} /><GT name={SATA} standard={} lanes={} usageRate={0.5} /><GT name={Display Port} standard={} lanes={} usageRate={0.5} />clockFreq={} /><GT name={USB3} standard={USB3.0} lanes={0}usageRate={0.5} /><GT name={SGMII} standard={SGMII} lanes={0} usageRate={0.5} /></SERDES><AFI master={2} slave={0} clockFreq={100.000} usageRate={0.5} /><FPINTERCONNECT clockFreq={533.333313} Bandwidth={Low} /></FPD><LPD><PROCESSSORS><PROCESSOR name={Cortex R-5} usage={Enable} TCM={Enable} OCM={Enable} clockFreq={500.000000} load={0.5}/></PROCESSSORS><PLLS><PLL domain={IO} vco={1499.985} /><PLL domain={RPLL} vco={2333.310} /></PLLS><CSUPMU><Unit name={CSU} usageRate={0.5} clockFreq={500} /><Unit name={PMU} usageRate={0.5} clockFreq={180} /></CSUPMU><GPIO><Bank ioBank={VCC_PSIO0} number={15} io_standard={LVCMOS 1.8V} /><Bank ioBank={VCC_PSIO1} number={13} io_standard={LVCMOS 1.8V} /><Bank ioBank={VCC_PSIO2} number={0} io_standard={LVCMOS 1.8V} /><Bank ioBank={VCC_PSIO3} number={16} io_standard={LVCMOS 1.8V} /></GPIO><IOINTERFACES> <IO name={QSPI} io_standard={} ioBank={VCC_PSIO0} clockFreq={300.000000} inputs={0} outputs={3} inouts={4} usageRate={0.5}/><IO name={NAND 3.1} io_standard={} ioBank={} clockFreq={} inputs={} outputs={} inouts={} usageRate={0.5}/><IO name={USB0} io_standard={} ioBank={} clockFreq={} inputs={} outputs={} inouts={} usageRate={0.5}/><IO name={USB1} io_standard={} ioBank={VCC_PSIO2} clockFreq={250.000000} inputs={3} outputs={1} inouts={8} usageRate={0.5}/><IO name={GigabitEth0} io_standard={} ioBank={} clockFreq={} inputs={} outputs={} inouts={} usageRate={0.5}/><IO name={GigabitEth1} io_standard={} ioBank={} clockFreq={} inputs={} outputs={} inouts={} usageRate={0.5}/><IO name={GigabitEth2} io_standard={} ioBank={VCC_PSIO2} clockFreq={125.000000} inputs={6} outputs={6} inouts={0} usageRate={0.5}/><IO name={GigabitEth3} io_standard={} ioBank={} clockFreq={} inputs={} outputs={} inouts={} usageRate={0.5}/><IO name={GPIO 0} io_standard={} ioBank={VCC_PSIO0} clockFreq={1} inputs={0} outputs={0} inouts={15} usageRate={0.5}/><IO name={GPIO 1} io_standard={} ioBank={VCC_PSIO1} clockFreq={1} inputs={0} outputs={0} inouts={13} usageRate={0.5}/><IO name={GPIO 2} io_standard={} ioBank={VCC_PSIO2} clockFreq={1} inputs={0} outputs={0} inouts={0} usageRate={0.5}/><IO name={GPIO 3} io_standard={} ioBank={VCC_PSIO3} clockFreq={1} inputs={} outputs={} inouts={16} usageRate={0.5}/><IO name={UART0} io_standard={} ioBank={VCC_PSIO0} clockFreq={100.000000} inputs={1} outputs={1} inouts={0} usageRate={0.5}/><IO name={UART1} io_standard={} ioBank={} clockFreq={} inputs={} outputs={} inouts={} usageRate={0.5}/><IO name={I2C0} io_standard={} ioBank={} clockFreq={} inputs={} outputs={} inouts={} usageRate={0.5}/><IO name={I2C1} io_standard={} ioBank={VCC_PSIO0} clockFreq={100.000000} inputs={0} outputs={0} inouts={2} usageRate={0.5}/><IO name={SPI0} io_standard={} ioBank={VCC_PSIO1} clockFreq={187.500000} inputs={0} outputs={0} inouts={4} usageRate={0.5}/><IO name={SPI1} io_standard={} ioBank={} clockFreq={} inputs={} outputs={} inouts={} usageRate={0.5}/><IO name={CAN0} io_standard={} ioBank={} clockFreq={} inputs={} outputs={} inouts={} usageRate={0.5}/><IO name={CAN1} io_standard={} ioBank={} clockFreq={} inputs={} outputs={} inouts={} usageRate={0.5}/><IO name={SD0} io_standard={} ioBank={} clockFreq={} inputs={} outputs={} inouts={} usageRate={0.5}/><IO name={SD1} io_standard={} ioBank={VCC_PSIO1} clockFreq={187.500000} inputs={1} outputs={1} inouts={5} usageRate={0.5}/><IO name={Trace} io_standard={} ioBank={} clockFreq={} inputs={} outputs={} inouts={} usageRate={0.5}/><IO name={TTC0} io_standard={} ioBank={} clockFreq={100} inputs={0} outputs={0} inouts={0} usageRate={0.5}/><IO name={TTC1} io_standard={} ioBank={} clockFreq={100} inputs={0} outputs={0} inouts={0} usageRate={0.5}/><IO name={TTC2} io_standard={} ioBank={} clockFreq={100} inputs={0} outputs={0} inouts={0} usageRate={0.5}/><IO name={TTC3} io_standard={} ioBank={} clockFreq={100} inputs={0} outputs={0} inouts={0} usageRate={0.5}/><IO name={PJTAG} io_standard={} ioBank={} clockFreq={} inputs={} outputs={} inouts={} usageRate={0.5}/><IO name={DPAUX} io_standard={} ioBank={} clockFreq={} inputs={} outputs={} inouts={} usageRate={0.5}/><IO name={WDT0} io_standard={} ioBank={} clockFreq={100} inputs={0} outputs={0} inouts={0} usageRate={0.5}/><IO name={WDT1} io_standard={} ioBank={} clockFreq={100} inputs={0} outputs={0} inouts={0} usageRate={0.5}/></IOINTERFACES><AFI master={0} slave={0} clockFreq={333.333} usageRate={0.5} /><LPINTERCONNECT clockFreq={500.000000} Bandwidth={High} /></LPD></PS8></BLOCKTYPE>/>";
-end MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e;
+  attribute PSS_POWER of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e : entity is "<BLOCKTYPE name={PS8}> <PS8><FPD><PROCESSSORS><PROCESSOR name={Cortex A-53} numCores={2} L2Cache={Enable} clockFreq={1200.000000} load={0.5}/><PROCESSOR name={GPU Mali-400 MP} numCores={0} clockFreq={0} load={0.5} /></PROCESSSORS><PLLS><PLL domain={APU} vco={2399.976} /><PLL domain={DDR} vco={2133.312} /><PLL domain={Video} vco={2366.643} /></PLLS><MEMORY memType={LPDDR4} dataWidth={4} clockFreq={533.333} readRate={0.5} writeRate={0.5} cmdAddressActivity={0.5} /><SERDES><GT name={PCIe} standard={} lanes={} usageRate={0.5} /><GT name={SATA} standard={} lanes={} usageRate={0.5} /><GT name={Display Port} standard={} lanes={} usageRate={0.5} />clockFreq={} /><GT name={USB3} standard={USB3.0} lanes={0}usageRate={0.5} /><GT name={SGMII} standard={SGMII} lanes={0} usageRate={0.5} /></SERDES><AFI master={2} slave={0} clockFreq={100.000} usageRate={0.5} /><FPINTERCONNECT clockFreq={533.333313} Bandwidth={Low} /></FPD><LPD><PROCESSSORS><PROCESSOR name={Cortex R-5} usage={Enable} TCM={Enable} OCM={Enable} clockFreq={500.000000} load={0.5}/></PROCESSSORS><PLLS><PLL domain={IO} vco={1499.985} /><PLL domain={RPLL} vco={2333.310} /></PLLS><CSUPMU><Unit name={CSU} usageRate={0.5} clockFreq={500} /><Unit name={PMU} usageRate={0.5} clockFreq={180} /></CSUPMU><GPIO><Bank ioBank={VCC_PSIO0} number={15} io_standard={LVCMOS 1.8V} /><Bank ioBank={VCC_PSIO1} number={13} io_standard={LVCMOS 1.8V} /><Bank ioBank={VCC_PSIO2} number={0} io_standard={LVCMOS 1.8V} /><Bank ioBank={VCC_PSIO3} number={16} io_standard={LVCMOS 1.8V} /></GPIO><IOINTERFACES> <IO name={QSPI} io_standard={} ioBank={VCC_PSIO0} clockFreq={300.000000} inputs={0} outputs={3} inouts={4} usageRate={0.5}/><IO name={NAND 3.1} io_standard={} ioBank={} clockFreq={} inputs={} outputs={} inouts={} usageRate={0.5}/><IO name={USB0} io_standard={} ioBank={} clockFreq={} inputs={} outputs={} inouts={} usageRate={0.5}/><IO name={USB1} io_standard={} ioBank={VCC_PSIO2} clockFreq={250.000000} inputs={3} outputs={1} inouts={8} usageRate={0.5}/><IO name={GigabitEth0} io_standard={} ioBank={} clockFreq={} inputs={} outputs={} inouts={} usageRate={0.5}/><IO name={GigabitEth1} io_standard={} ioBank={} clockFreq={} inputs={} outputs={} inouts={} usageRate={0.5}/><IO name={GigabitEth2} io_standard={} ioBank={VCC_PSIO2} clockFreq={125.000000} inputs={6} outputs={6} inouts={0} usageRate={0.5}/><IO name={GigabitEth3} io_standard={} ioBank={} clockFreq={} inputs={} outputs={} inouts={} usageRate={0.5}/><IO name={GPIO 0} io_standard={} ioBank={VCC_PSIO0} clockFreq={1} inputs={0} outputs={0} inouts={15} usageRate={0.5}/><IO name={GPIO 1} io_standard={} ioBank={VCC_PSIO1} clockFreq={1} inputs={0} outputs={0} inouts={13} usageRate={0.5}/><IO name={GPIO 2} io_standard={} ioBank={VCC_PSIO2} clockFreq={1} inputs={0} outputs={0} inouts={0} usageRate={0.5}/><IO name={GPIO 3} io_standard={} ioBank={VCC_PSIO3} clockFreq={1} inputs={} outputs={} inouts={16} usageRate={0.5}/><IO name={UART0} io_standard={} ioBank={VCC_PSIO0} clockFreq={100.000000} inputs={1} outputs={1} inouts={0} usageRate={0.5}/><IO name={UART1} io_standard={} ioBank={} clockFreq={} inputs={} outputs={} inouts={} usageRate={0.5}/><IO name={I2C0} io_standard={} ioBank={} clockFreq={} inputs={} outputs={} inouts={} usageRate={0.5}/><IO name={I2C1} io_standard={} ioBank={VCC_PSIO0} clockFreq={100.000000} inputs={0} outputs={0} inouts={2} usageRate={0.5}/><IO name={SPI0} io_standard={} ioBank={VCC_PSIO1} clockFreq={187.500000} inputs={0} outputs={0} inouts={4} usageRate={0.5}/><IO name={SPI1} io_standard={} ioBank={} clockFreq={} inputs={} outputs={} inouts={} usageRate={0.5}/><IO name={CAN0} io_standard={} ioBank={} clockFreq={} inputs={} outputs={} inouts={} usageRate={0.5}/><IO name={CAN1} io_standard={} ioBank={} clockFreq={} inputs={} outputs={} inouts={} usageRate={0.5}/><IO name={SD0} io_standard={} ioBank={} clockFreq={} inputs={} outputs={} inouts={} usageRate={0.5}/><IO name={SD1} io_standard={} ioBank={VCC_PSIO1} clockFreq={187.500000} inputs={1} outputs={1} inouts={5} usageRate={0.5}/><IO name={Trace} io_standard={} ioBank={} clockFreq={} inputs={} outputs={} inouts={} usageRate={0.5}/><IO name={TTC0} io_standard={} ioBank={} clockFreq={100} inputs={0} outputs={0} inouts={0} usageRate={0.5}/><IO name={TTC1} io_standard={} ioBank={} clockFreq={100} inputs={0} outputs={0} inouts={0} usageRate={0.5}/><IO name={TTC2} io_standard={} ioBank={} clockFreq={100} inputs={0} outputs={0} inouts={0} usageRate={0.5}/><IO name={TTC3} io_standard={} ioBank={} clockFreq={100} inputs={0} outputs={0} inouts={0} usageRate={0.5}/><IO name={PJTAG} io_standard={} ioBank={} clockFreq={} inputs={} outputs={} inouts={} usageRate={0.5}/><IO name={DPAUX} io_standard={} ioBank={} clockFreq={} inputs={} outputs={} inouts={} usageRate={0.5}/><IO name={WDT0} io_standard={} ioBank={} clockFreq={100} inputs={0} outputs={0} inouts={0} usageRate={0.5}/><IO name={WDT1} io_standard={} ioBank={} clockFreq={100} inputs={0} outputs={0} inouts={0} usageRate={0.5}/></IOINTERFACES><AFI master={0} slave={0} clockFreq={333.333} usageRate={0.5} /><LPINTERCONNECT clockFreq={500.000000} Bandwidth={High} /></LPD></PS8></BLOCKTYPE>/>";
+end MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e;
 
-architecture STRUCTURE of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e is
+architecture STRUCTURE of MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e is
   signal \<const0>\ : STD_LOGIC;
   signal PS8_i_n_1 : STD_LOGIC;
   signal PS8_i_n_10 : STD_LOGIC;
@@ -6547,6 +6549,8 @@ begin
   ps_pl_irq_ttc3_2 <= \<const0>\;
   ps_pl_irq_uart0 <= \<const0>\;
   ps_pl_irq_uart1 <= \<const0>\;
+  ps_pl_irq_usb2_0_otg <= \<const0>\;
+  ps_pl_irq_usb2_1_otg <= \<const0>\;
   ps_pl_irq_usb3_0_endpoint(3) <= \<const0>\;
   ps_pl_irq_usb3_0_endpoint(2) <= \<const0>\;
   ps_pl_irq_usb3_0_endpoint(1) <= \<const0>\;
@@ -14083,11 +14087,11 @@ entity MainBlock_zynq_ultra_ps_e_0_0 is
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of MainBlock_zynq_ultra_ps_e_0_0 : entity is true;
   attribute CHECK_LICENSE_TYPE : string;
-  attribute CHECK_LICENSE_TYPE of MainBlock_zynq_ultra_ps_e_0_0 : entity is "MainBlock_zynq_ultra_ps_e_0_0,zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e,{}";
+  attribute CHECK_LICENSE_TYPE of MainBlock_zynq_ultra_ps_e_0_0 : entity is "MainBlock_zynq_ultra_ps_e_0_0,zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e,{}";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of MainBlock_zynq_ultra_ps_e_0_0 : entity is "yes";
   attribute x_core_info : string;
-  attribute x_core_info of MainBlock_zynq_ultra_ps_e_0_0 : entity is "zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e,Vivado 2025.1";
+  attribute x_core_info of MainBlock_zynq_ultra_ps_e_0_0 : entity is "zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e,Vivado 2025.2";
 end MainBlock_zynq_ultra_ps_e_0_0;
 
 architecture STRUCTURE of MainBlock_zynq_ultra_ps_e_0_0 is
@@ -14486,6 +14490,8 @@ architecture STRUCTURE of MainBlock_zynq_ultra_ps_e_0_0 is
   signal NLW_U0_ps_pl_irq_ttc3_2_UNCONNECTED : STD_LOGIC;
   signal NLW_U0_ps_pl_irq_uart0_UNCONNECTED : STD_LOGIC;
   signal NLW_U0_ps_pl_irq_uart1_UNCONNECTED : STD_LOGIC;
+  signal NLW_U0_ps_pl_irq_usb2_0_otg_UNCONNECTED : STD_LOGIC;
+  signal NLW_U0_ps_pl_irq_usb2_1_otg_UNCONNECTED : STD_LOGIC;
   signal NLW_U0_ps_pl_irq_usb3_0_otg_UNCONNECTED : STD_LOGIC;
   signal NLW_U0_ps_pl_irq_usb3_1_otg_UNCONNECTED : STD_LOGIC;
   signal NLW_U0_ps_pl_irq_xmpu_fpd_UNCONNECTED : STD_LOGIC;
@@ -15144,7 +15150,7 @@ architecture STRUCTURE of MainBlock_zynq_ultra_ps_e_0_0 is
   attribute x_interface_info of maxigp1_wdata : signal is "xilinx.com:interface:aximm:1.0 M_AXI_HPM1_FPD WDATA";
   attribute x_interface_info of maxigp1_wstrb : signal is "xilinx.com:interface:aximm:1.0 M_AXI_HPM1_FPD WSTRB";
 begin
-U0: entity work.MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_ps_e
+U0: entity work.MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_8_zynq_ultra_ps_e
      port map (
       adma2pl_cack(7 downto 0) => NLW_U0_adma2pl_cack_UNCONNECTED(7 downto 0),
       adma2pl_tvld(7 downto 0) => NLW_U0_adma2pl_tvld_UNCONNECTED(7 downto 0),
@@ -16085,6 +16091,8 @@ U0: entity work.MainBlock_zynq_ultra_ps_e_0_0_zynq_ultra_ps_e_v3_5_7_zynq_ultra_
       ps_pl_irq_ttc3_2 => NLW_U0_ps_pl_irq_ttc3_2_UNCONNECTED,
       ps_pl_irq_uart0 => NLW_U0_ps_pl_irq_uart0_UNCONNECTED,
       ps_pl_irq_uart1 => NLW_U0_ps_pl_irq_uart1_UNCONNECTED,
+      ps_pl_irq_usb2_0_otg => NLW_U0_ps_pl_irq_usb2_0_otg_UNCONNECTED,
+      ps_pl_irq_usb2_1_otg => NLW_U0_ps_pl_irq_usb2_1_otg_UNCONNECTED,
       ps_pl_irq_usb3_0_endpoint(3 downto 0) => NLW_U0_ps_pl_irq_usb3_0_endpoint_UNCONNECTED(3 downto 0),
       ps_pl_irq_usb3_0_otg => NLW_U0_ps_pl_irq_usb3_0_otg_UNCONNECTED,
       ps_pl_irq_usb3_0_pmu_wakeup(1 downto 0) => NLW_U0_ps_pl_irq_usb3_0_pmu_wakeup_UNCONNECTED(1 downto 0),

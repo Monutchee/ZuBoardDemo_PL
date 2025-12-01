@@ -1651,8 +1651,7 @@ module clk_map_imp_1EG2YWO
   assign S01_ACLK = swbd_aclk;
   assign S01_ARESETN[0] = swbd_aresetn;
   assign swbd_aclk = aclk;
-  bd_86f7_one_0 one
-       (.dout(one_dout));
+  assign one_dout = 1'h1;
   bd_86f7_psr_aclk_0 psr_aclk
        (.aux_reset_in(aresetn),
         .dcm_locked(1'b1),
