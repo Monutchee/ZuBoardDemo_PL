@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:ip:sc_sc2axi:1.0
-// IP Revision: 10
+// IP Revision: 11
 
-(* X_CORE_INFO = "sc_sc2axi_v1_0_10_top,Vivado 2025.1" *)
-(* CHECK_LICENSE_TYPE = "bd_86f7_m01s2a_0,sc_sc2axi_v1_0_10_top,{}" *)
-(* CORE_GENERATION_INFO = "bd_86f7_m01s2a_0,sc_sc2axi_v1_0_10_top,{x_ipProduct=Vivado 2025.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=sc_sc2axi,x_ipVersion=1.0,x_ipCoreRevision=10,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_AXI_ADDR_WIDTH=9,C_AXI_ID_WIDTH=2,C_AXI_RDATA_WIDTH=32,C_AXI_WDATA_WIDTH=32,C_SC_ADDR_WIDTH=40,C_SC_ID_WIDTH=2,C_SC_RDATA_WIDTH=128,C_SC_WDATA_WIDTH=128,C_SC_RUSER_BITS_PER_BYTE=0,C_SC_WUSER_BITS_PER_BYTE=0,C_SC_ARUSER_WIDTH=16,C_SC_AWUSER_WIDTH=16,C_SC_BUSER_WIDTH=0,C_MSC_ROUTE_WIDTH=4,C_SSC_ROUTE_\
+(* X_CORE_INFO = "sc_sc2axi_v1_0_11_top,Vivado 2025.2" *)
+(* CHECK_LICENSE_TYPE = "bd_86f7_m01s2a_0,sc_sc2axi_v1_0_11_top,{}" *)
+(* CORE_GENERATION_INFO = "bd_86f7_m01s2a_0,sc_sc2axi_v1_0_11_top,{x_ipProduct=Vivado 2025.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=sc_sc2axi,x_ipVersion=1.0,x_ipCoreRevision=11,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_AXI_ADDR_WIDTH=9,C_AXI_ID_WIDTH=2,C_AXI_RDATA_WIDTH=32,C_AXI_WDATA_WIDTH=32,C_SC_ADDR_WIDTH=40,C_SC_ID_WIDTH=2,C_SC_RDATA_WIDTH=128,C_SC_WDATA_WIDTH=128,C_SC_RUSER_BITS_PER_BYTE=0,C_SC_WUSER_BITS_PER_BYTE=0,C_SC_ARUSER_WIDTH=16,C_SC_AWUSER_WIDTH=16,C_SC_BUSER_WIDTH=0,C_MSC_ROUTE_WIDTH=4,C_SSC_ROUTE_\
 WIDTH=4,C_AWPAYLD_WIDTH=166,C_ARPAYLD_WIDTH=166,C_WPAYLD_WIDTH=163,C_RPAYLD_WIDTH=151,C_BPAYLD_WIDTH=9}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module bd_86f7_m01s2a_0 (
@@ -261,7 +261,7 @@ input wire m_axi_rvalid;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI RREADY" *)
 output wire m_axi_rready;
 
-  sc_sc2axi_v1_0_10_top #(
+  sc_sc2axi_v1_0_11_top #(
     .C_AXI_ADDR_WIDTH(9),
     .C_AXI_ID_WIDTH(2),
     .C_AXI_RDATA_WIDTH(32),

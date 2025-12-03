@@ -1,11 +1,11 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
--- Date        : Wed Jul  9 16:17:19 2025
--- Host        : lpc1 running 64-bit Ubuntu 24.04.2 LTS
--- Command     : write_vhdl -force -mode synth_stub -rename_top MainBlock_axi_smc_0 -prefix
---               MainBlock_axi_smc_0_ MainBlock_axi_smc_0_stub.vhdl
+-- Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+-- Date        : Mon Dec  1 10:15:45 2025
+-- Host        : lpc1 running 64-bit Ubuntu 24.04.3 LTS
+-- Command     : write_vhdl -force -mode synth_stub
+--               /mnt/data_disk/vivado_ws/ZuBoardDemo_PL/SourceData/BlockDesign/MainBlock/ip/MainBlock_axi_smc_0/MainBlock_axi_smc_0_stub.vhdl
 -- Design      : MainBlock_axi_smc_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xczu1cg-sbva484-1-e
@@ -138,7 +138,7 @@ entity MainBlock_axi_smc_0 is
   attribute CHECK_LICENSE_TYPE : string;
   attribute CHECK_LICENSE_TYPE of MainBlock_axi_smc_0 : entity is "MainBlock_axi_smc_0,bd_86f7,{}";
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of MainBlock_axi_smc_0 : entity is "MainBlock_axi_smc_0,bd_86f7,{x_ipProduct=Vivado 2025.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=smartconnect,x_ipVersion=1.0,x_ipCoreRevision=27,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED}";
+  attribute CORE_GENERATION_INFO of MainBlock_axi_smc_0 : entity is "MainBlock_axi_smc_0,bd_86f7,{x_ipProduct=Vivado 2025.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=smartconnect,x_ipVersion=1.0,x_ipCoreRevision=28,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED}";
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of MainBlock_axi_smc_0 : entity is "yes";
 end MainBlock_axi_smc_0;
@@ -282,6 +282,6 @@ architecture stub of MainBlock_axi_smc_0 is
   attribute X_INTERFACE_INFO of M01_AXI_rvalid : signal is "xilinx.com:interface:aximm:1.0 M01_AXI RVALID";
   attribute X_INTERFACE_INFO of M01_AXI_rready : signal is "xilinx.com:interface:aximm:1.0 M01_AXI RREADY";
   attribute X_CORE_INFO : string;
-  attribute X_CORE_INFO of stub : architecture is "bd_86f7,Vivado 2025.1";
+  attribute X_CORE_INFO of stub : architecture is "bd_86f7,Vivado 2025.2";
 begin
 end;
