@@ -1,31 +1,39 @@
 # Vivado Project Template for version control
 
+## Version Control Policy
+
+This repository tracks Vivado design intent, not generated build output.
+
+Track:
+
+- HDL sources under `SourceData/DesignFile/`
+- constraints under `SourceData/Constraints/`
+- block design sources such as `SourceData/BlockDesign/MainBlock/MainBlock.bd`
+- the top-level generated wrapper if it is used as the project top
+- rebuild/export scripts under `SourceData/Script/`
+
+Do not track:
+
+- `vivado_gen/` project/build output, except `vivado_gen/ZuBoardDemo_PL.xpr`
+- block-design generated IP output under `SourceData/BlockDesign/**/ip/`
+- shared IP cache under `SourceData/BlockDesign/**/ipshared/`
+- generated netlists, checkpoints, reports, logs, journals, and hardware handoff output
+
+`vivado_gen/ZuBoardDemo_PL.xpr` is kept as an archive/convenience snapshot.
+Treat the `SourceData/` files and rebuild scripts as the source of truth because Vivado may rewrite `.xpr` paths and run metadata when the project is opened or rebuilt.
+
 ## Project Initialization
 
-1. Start a new project under `Vivado_gen` folder
-
+1. Create or regenerate the Vivado project under `vivado_gen/`.
+2. Add the source files from `SourceData/`.
+3. Generate block-design output products locally from the tracked `.bd` file.
 
 ## Usage
-1. Create a source file under `Source Data/`.
 
-2. Generate the `.tcl` rebuild script after each modification via GUI. 
-
-    a. For normal modification, Use `File -> Project -> Write TCL`
-
-    b. For Block design modification`File -> Export -> Export Block Design`
-
-    c. output Path should be `SourceData/Script/`
-
-3. After clone / update the modification, 
-    1. Make sure you navigated to `vivado_gen/` before open the `.xpr` file. Otherwise the vivado dynamic file will be generated on your root of repo directory
-
-    ```
-    cd vivado_gen/
-    vivado project_name.xpr
-    ```
-
-    2. This step seems not necessary to execute on GUI since the `.xpr` file already have the most updated config.
-    ```
-    source <path_to_your_script>.tcl
-    ```
+1. Create source files under `SourceData/`.
+2. After real project or block-design changes, update the tracked source files and scripts:
+   - For project changes, use `File -> Project -> Write Tcl`.
+   - For block-design changes, use `File -> Export -> Export Block Design`.
+   - Write generated scripts to `SourceData/Script/`.
+3. Before committing, `git status` should normally show only source-intent changes such as `.bd`, HDL, XDC, or scripts. Recompile-only changes in `vivado_gen/`, `ip/`, and `ipshared/` should remain ignored.
 
