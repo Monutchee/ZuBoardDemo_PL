@@ -8,9 +8,37 @@ vivado_gen/*
 .Xil/
 *.jou
 *.log
+*.debug
 *.str
+*.tmp
+*.rst
+*.os
+*.pb
+*.vds
+*.wdf
+*.vdi
+*.dmp
+*.rpx
+*.rpt
 *.backup.jou
 *.backup.log
+*_funcsim.v
+*_funcsim.vhdl
+.project
+
+# Vivado generated directories.
+.metadata/
+*.cache/
+*.data/
+*.ipdefs/
+*.sdk/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.gen/
+*.sim/
+.jobs/
+*_synth_*/
 
 # Exported release/package output.
 export/
@@ -22,6 +50,7 @@ SourceData/BlockDesign/**/ip/
 SourceData/BlockDesign/**/ipshared/
 SourceData/BlockDesign/**/sim/
 SourceData/BlockDesign/**/synth/
+SourceData/BlockDesign/**/hw_handoff/
 SourceData/BlockDesign/**/ip/**/bd_*/
 SourceData/BlockDesign/**/ip/**/hdl/
 SourceData/BlockDesign/**/ip/**/sim_tlm/
