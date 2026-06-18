@@ -2,7 +2,7 @@
 # Vivado project/build output regenerated locally.
 vivado_gen/*
 !vivado_gen/.gitkeep
-!vivado_gen/ZuBoardDemo_PL.xpr
+!vivado_gen/*.xpr
 
 # Vivado runtime files.
 .Xil/
