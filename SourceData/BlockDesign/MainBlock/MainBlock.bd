@@ -1217,6 +1217,24 @@
           "PSU__SATA__PERIPHERAL__ENABLE": {
             "value": "0"
           },
+          "PSU__SD0__CLK_100_SDR_OTAP_DLY": {
+            "value": "0x3"
+          },
+          "PSU__SD0__CLK_200_SDR_OTAP_DLY": {
+            "value": "0x3"
+          },
+          "PSU__SD0__CLK_50_DDR_ITAP_DLY": {
+            "value": "0x3D"
+          },
+          "PSU__SD0__CLK_50_DDR_OTAP_DLY": {
+            "value": "0x4"
+          },
+          "PSU__SD0__CLK_50_SDR_ITAP_DLY": {
+            "value": "0x15"
+          },
+          "PSU__SD0__CLK_50_SDR_OTAP_DLY": {
+            "value": "0x5"
+          },
           "PSU__SD0__PERIPHERAL__ENABLE": {
             "value": "0"
           },
@@ -1671,8 +1689,8 @@
       "led_driver_0": {
         "vlnv": "xilinx.com:module_ref:led_driver:1.0",
         "ip_revision": "1",
-        "xci_name": "MainBlock_led_driver_0_1",
-        "xci_path": "ip/MainBlock_led_driver_0_1/MainBlock_led_driver_0_1.xci",
+        "xci_name": "MainBlock_led_driver_0_0",
+        "xci_path": "ip/MainBlock_led_driver_0_0/MainBlock_led_driver_0_0.xci",
         "inst_hier_path": "led_driver_0",
         "has_run_ip_tcl": "true",
         "reference_info": {

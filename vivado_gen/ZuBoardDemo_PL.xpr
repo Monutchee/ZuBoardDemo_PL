@@ -4,7 +4,7 @@
 <!-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.                   -->
 <!-- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.   -->
 
-<Project Product="Vivado" Version="7" Minor="71" Path="/mnt/data_disk/monutchee/zudemo/ZuBoardDemo_PL/vivado_gen/ZuBoardDemo_PL.xpr">
+<Project Product="Vivado" Version="7" Minor="71" Path="/opt/monutchee/project/zudemo/ZuBoardDemo_PL/vivado_gen/ZuBoardDemo_PL.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="a7e1069c540b49098ce43e1653a15581"/>
@@ -119,8 +119,8 @@
         <CompFileExtendedInfo CompFileName="MainBlock.bd" FileRelPathName="ip/MainBlock_axi_smc_0/MainBlock_axi_smc_0.xci">
           <Proxy FileSetName="MainBlock_axi_smc_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="MainBlock.bd" FileRelPathName="ip/MainBlock_led_driver_0_1/MainBlock_led_driver_0_1.xci">
-          <Proxy FileSetName="MainBlock_led_driver_0_1"/>
+        <CompFileExtendedInfo CompFileName="MainBlock.bd" FileRelPathName="ip/MainBlock_led_driver_0_0/MainBlock_led_driver_0_0.xci">
+          <Proxy FileSetName="MainBlock_led_driver_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="MainBlock.bd" FileRelPathName="ip/MainBlock_rst_ps8_0_100M_0/MainBlock_rst_ps8_0_100M_0.xci">
           <Proxy FileSetName="MainBlock_rst_ps8_0_100M_0"/>
@@ -183,13 +183,39 @@
     </FileSet>
     <FileSet Name="utils_1" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
       <Filter Type="Utils"/>
+      <File Path="$PSRCDIR/utils_1/imports/synth_1/MainBlock_wrapper.dcp">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedInSteps" Val="synth_1"/>
+          <Attr Name="AutoDcp" Val="1"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="TopAutoSet" Val="TRUE"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="MainBlock_axi_iic_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MainBlock_axi_iic_0_0" RelGenDir="$PGENDIR/MainBlock_axi_iic_0_0">
+      <Config>
+        <Option Name="TopModule" Val="MainBlock_axi_iic_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="MainBlock_axi_smc_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MainBlock_axi_smc_0" RelGenDir="$PGENDIR/MainBlock_axi_smc_0">
+      <Config>
+        <Option Name="TopModule" Val="MainBlock_axi_smc_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
     <FileSet Name="MainBlock_rst_ps8_0_100M_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MainBlock_rst_ps8_0_100M_0" RelGenDir="$PGENDIR/MainBlock_rst_ps8_0_100M_0">
       <Config>
         <Option Name="TopModule" Val="MainBlock_rst_ps8_0_100M_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="MainBlock_led_driver_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MainBlock_led_driver_0_0" RelGenDir="$PGENDIR/MainBlock_led_driver_0_0">
+      <Config>
+        <Option Name="TopModule" Val="MainBlock_led_driver_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -199,27 +225,9 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="MainBlock_axi_iic_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MainBlock_axi_iic_0_0" RelGenDir="$PGENDIR/MainBlock_axi_iic_0_0">
-      <Config>
-        <Option Name="TopModule" Val="MainBlock_axi_iic_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="MainBlock_led_driver_0_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MainBlock_led_driver_0_1" RelGenDir="$PGENDIR/MainBlock_led_driver_0_1">
-      <Config>
-        <Option Name="TopModule" Val="MainBlock_led_driver_0_1"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="MainBlock_zynq_ultra_ps_e_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MainBlock_zynq_ultra_ps_e_0_0" RelGenDir="$PGENDIR/MainBlock_zynq_ultra_ps_e_0_0">
       <Config>
         <Option Name="TopModule" Val="MainBlock_zynq_ultra_ps_e_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="MainBlock_axi_smc_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MainBlock_axi_smc_0" RelGenDir="$PGENDIR/MainBlock_axi_smc_0">
-      <Config>
-        <Option Name="TopModule" Val="MainBlock_axi_smc_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -246,27 +254,7 @@
     </Simulator>
   </Simulators>
   <Runs Version="1" Minor="22">
-    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xczu1cg-sbva484-1-e" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="true" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/synth_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2025"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="MainBlock_rst_ps8_0_100M_0_synth_1" Type="Ft3:Synth" SrcSet="MainBlock_rst_ps8_0_100M_0" Part="xczu1cg-sbva484-1-e" ConstrsSet="MainBlock_rst_ps8_0_100M_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MainBlock_rst_ps8_0_100M_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MainBlock_rst_ps8_0_100M_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MainBlock_rst_ps8_0_100M_0_synth_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2025"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="MainBlock_axi_gpio_0_0_synth_1" Type="Ft3:Synth" SrcSet="MainBlock_axi_gpio_0_0" Part="xczu1cg-sbva484-1-e" ConstrsSet="MainBlock_axi_gpio_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MainBlock_axi_gpio_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MainBlock_axi_gpio_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MainBlock_axi_gpio_0_0_synth_1" ParallelReportGen="true">
+    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xczu1cg-sbva484-1-e" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="true" IncrementalCheckpoint="$PSRCDIR/utils_1/imports/synth_1/MainBlock_wrapper.dcp" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
         <Step Id="synth_design"/>
@@ -286,7 +274,37 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="MainBlock_led_driver_0_1_synth_1" Type="Ft3:Synth" SrcSet="MainBlock_led_driver_0_1" Part="xczu1cg-sbva484-1-e" ConstrsSet="MainBlock_led_driver_0_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MainBlock_led_driver_0_1_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MainBlock_led_driver_0_1_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MainBlock_led_driver_0_1_synth_1" ParallelReportGen="true">
+    <Run Id="MainBlock_axi_smc_0_synth_1" Type="Ft3:Synth" SrcSet="MainBlock_axi_smc_0" Part="xczu1cg-sbva484-1-e" ConstrsSet="MainBlock_axi_smc_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MainBlock_axi_smc_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MainBlock_axi_smc_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MainBlock_axi_smc_0_synth_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2025"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="MainBlock_rst_ps8_0_100M_0_synth_1" Type="Ft3:Synth" SrcSet="MainBlock_rst_ps8_0_100M_0" Part="xczu1cg-sbva484-1-e" ConstrsSet="MainBlock_rst_ps8_0_100M_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MainBlock_rst_ps8_0_100M_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MainBlock_rst_ps8_0_100M_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MainBlock_rst_ps8_0_100M_0_synth_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2025"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="MainBlock_led_driver_0_0_synth_1" Type="Ft3:Synth" SrcSet="MainBlock_led_driver_0_0" Part="xczu1cg-sbva484-1-e" ConstrsSet="MainBlock_led_driver_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MainBlock_led_driver_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MainBlock_led_driver_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MainBlock_led_driver_0_0_synth_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2025"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="MainBlock_axi_gpio_0_0_synth_1" Type="Ft3:Synth" SrcSet="MainBlock_axi_gpio_0_0" Part="xczu1cg-sbva484-1-e" ConstrsSet="MainBlock_axi_gpio_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MainBlock_axi_gpio_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MainBlock_axi_gpio_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MainBlock_axi_gpio_0_0_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
         <Step Id="synth_design"/>
@@ -297,16 +315,6 @@
       <RQSFiles/>
     </Run>
     <Run Id="MainBlock_zynq_ultra_ps_e_0_0_synth_1" Type="Ft3:Synth" SrcSet="MainBlock_zynq_ultra_ps_e_0_0" Part="xczu1cg-sbva484-1-e" ConstrsSet="MainBlock_zynq_ultra_ps_e_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MainBlock_zynq_ultra_ps_e_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MainBlock_zynq_ultra_ps_e_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MainBlock_zynq_ultra_ps_e_0_0_synth_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2025"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="MainBlock_axi_smc_0_synth_1" Type="Ft3:Synth" SrcSet="MainBlock_axi_smc_0" Part="xczu1cg-sbva484-1-e" ConstrsSet="MainBlock_axi_smc_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MainBlock_axi_smc_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MainBlock_axi_smc_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MainBlock_axi_smc_0_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
         <Step Id="synth_design"/>
@@ -334,7 +342,58 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
+    <Run Id="MainBlock_axi_iic_0_0_impl_1" Type="Ft2:EntireDesign" Part="xczu1cg-sbva484-1-e" ConstrsSet="MainBlock_axi_iic_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MainBlock_axi_iic_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MainBlock_axi_iic_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MainBlock_axi_iic_0_0_impl_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2025"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="MainBlock_axi_smc_0_impl_1" Type="Ft2:EntireDesign" Part="xczu1cg-sbva484-1-e" ConstrsSet="MainBlock_axi_smc_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MainBlock_axi_smc_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MainBlock_axi_smc_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MainBlock_axi_smc_0_impl_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2025"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
     <Run Id="MainBlock_rst_ps8_0_100M_0_impl_1" Type="Ft2:EntireDesign" Part="xczu1cg-sbva484-1-e" ConstrsSet="MainBlock_rst_ps8_0_100M_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MainBlock_rst_ps8_0_100M_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MainBlock_rst_ps8_0_100M_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MainBlock_rst_ps8_0_100M_0_impl_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2025"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="MainBlock_led_driver_0_0_impl_1" Type="Ft2:EntireDesign" Part="xczu1cg-sbva484-1-e" ConstrsSet="MainBlock_led_driver_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MainBlock_led_driver_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MainBlock_led_driver_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MainBlock_led_driver_0_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025"/>
         <Step Id="init_design"/>
@@ -368,58 +427,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="MainBlock_axi_iic_0_0_impl_1" Type="Ft2:EntireDesign" Part="xczu1cg-sbva484-1-e" ConstrsSet="MainBlock_axi_iic_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MainBlock_axi_iic_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MainBlock_axi_iic_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MainBlock_axi_iic_0_0_impl_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2025"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="MainBlock_led_driver_0_1_impl_1" Type="Ft2:EntireDesign" Part="xczu1cg-sbva484-1-e" ConstrsSet="MainBlock_led_driver_0_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MainBlock_led_driver_0_1_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MainBlock_led_driver_0_1_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MainBlock_led_driver_0_1_impl_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2025"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
     <Run Id="MainBlock_zynq_ultra_ps_e_0_0_impl_1" Type="Ft2:EntireDesign" Part="xczu1cg-sbva484-1-e" ConstrsSet="MainBlock_zynq_ultra_ps_e_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MainBlock_zynq_ultra_ps_e_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MainBlock_zynq_ultra_ps_e_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MainBlock_zynq_ultra_ps_e_0_0_impl_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2025"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="MainBlock_axi_smc_0_impl_1" Type="Ft2:EntireDesign" Part="xczu1cg-sbva484-1-e" ConstrsSet="MainBlock_axi_smc_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MainBlock_axi_smc_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MainBlock_axi_smc_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MainBlock_axi_smc_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025"/>
         <Step Id="init_design"/>
